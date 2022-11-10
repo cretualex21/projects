@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Expenses chart component</title>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="container__balance">
+      <div class="container__balance--left">
+        <p>My Balance</p>
+        <h2>$921.48</h2>
+      </div>
+
+      <img src="./images/logo.svg" alt="logo">
+    </div>
+    <div class="container__spendings">
+      <h1>Spending - Last 7 days</h1>
+      <div class="container__spendings__graphs">
+
+
+        <div data-day="mon" id="1" class="graph js-graph">
+          <div data-day="mon" class="money">
+            <p></p>
+          </div>
+        </div>
+
+        <div data-day="tue" id="2" class="graph js-graph">
+          <div data-day="tue" class="money">
+            <p></p>
+          </div>
+        </div>
+
+        <div data-day="wed" id="3" class="graph js-graph">
+          <div data-day="wed" class="money">
+            <p></p>
+          </div>
+        </div>
+
+        <div data-day="thu" id="4" class="graph js-graph">
+          <div data-day="thu" class="money">
+            <p></p>
+          </div>
+        </div>
+
+        <div data-day="fri" id="5" class="graph js-graph">
+          <div data-day="fri" class="money">
+            <p></p>
+          </div>
+        </div>
+
+        <div data-day="sat" id="6" class="graph js-graph">
+          <div data-day="sat" class="money">
+            <p></p>
+          </div>
+        </div>
+        <div data-day="sun" id="0" class="graph js-graph">
+          <div data-day="sun" class="money">
+            <p></p>
+          </div>
+        </div>
+        <p>mon</p>
+        <p>tue</p>
+        <p>wed</p>
+        <p>thu</p>
+        <p>fri</p>
+        <p>sat</p>
+        <p>sun</p>
+
+      </div>
+      <hr>
+      <div class="container__spendings__total">
+        <div class="container__spendings__total--left">
+          <p>Total this month</p>
+          <h1>$478.33</h1>
+        </div>
+        <div class="container__spendings__total--right">
+          <h3>+2.4%</h3>
+          <p>from last month</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<script type="module" src="app.js"></script>
+
+</html>

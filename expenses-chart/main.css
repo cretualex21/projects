@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Outfit:wght@400;700&family=Space+Grotesk:wght@500&display=swap");
+body {
+  font-family: "DM Sans", sans-serif;
+  height: 75vh;
+  background-color: hsl(27deg, 66%, 92%);
+}
+
+.container {
+  position: relative;
+  width: 95%;
+  margin-inline: auto;
+  top: 25%;
+  bottom: 25%;
+}
+.container__balance {
+  background: hsl(10deg, 79%, 65%);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 10px;
+  color: hsl(33deg, 100%, 98%);
+}
+.container__balance--left p {
+  margin-bottom: 0px;
+}
+.container__balance--left h2 {
+  margin-top: 5px;
+}
+.container__spendings {
+  margin-top: 10px;
+  background: hsl(33deg, 100%, 98%);
+  border-radius: 10px;
+  padding: 5px;
+}
+.container__spendings h1 {
+  text-align: start;
+  padding: 5px;
+}
+.container__spendings__graphs {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  gap: 1rem;
+}
+.container__spendings__graphs p {
+  margin-top: 5px;
+  color: hsl(28deg, 10%, 53%);
+}
+.container__spendings__total {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.container__spendings__total--left p {
+  color: hsl(28deg, 10%, 53%);
+  margin-bottom: -20px;
+}
+.container__spendings__total-- left h1 {
+  color: hsl(25deg, 47%, 15%);
+}
+.container__spendings__total--right {
+  margin-top: 20px;
+}
+.container__spendings__total--right p {
+  color: hsl(28deg, 10%, 53%);
+  margin-top: -10px;
+}
+.container__spendings__total--right h3 {
+  position: relative;
+  margin-bottom: 5px;
+  right: -60px;
+  color: hsl(25deg, 47%, 15%);
+}
+
+.graph {
+  width: 30px;
+  border-radius: 5px;
+  max-height: 100px;
+  height: 220px;
+  background: hsl(10deg, 79%, 65%);
+  align-self: end;
+  animation: graph 1.5s ease-in;
+}
+
+.money {
+  margin-top: -45px;
+  margin-left: -10px;
+  position: relative;
+  background: hsl(25deg, 47%, 15%);
+  color: hsl(33deg, 100%, 98%);
+  padding: 2px 10px;
+  width: 42px;
+  height: 35px;
+  border-radius: 5px;
+  display: none;
+}
+.money p {
+  font-size: 18px;
+  color: hsl(33deg, 100%, 98%);
+  margin-left: -6px;
+}
+
+hr {
+  color: hsl(10deg, 79%, 65%);
+  opacity: 0.2;
+}
+
+@media only screen and (min-width: 400px) and (orientation: landscape) {
+  body {
+    height: 200vh;
+  }
+  .container {
+    top: 15%;
+  }
+  .graph {
+    width: 40px;
+  }
+}
+@media only screen and (min-width: 700px) and (orientation: landscape) {
+  body {
+    height: 200vh;
+  }
+  .container {
+    top: 15%;
+    width: 60%;
+  }
+  .container__spendings {
+    margin-top: 25px;
+  }
+  .container__spendings h1 {
+    margin-left: 35px;
+  }
+  .container__spendings__graphs {
+    grid-template-columns: repeat(7, 50px);
+    justify-content: center;
+  }
+  .container__spendings__total {
+    margin-top: 30px;
+  }
+  .container__spendings__total--left {
+    margin-left: 20px;
+  }
+  .container__spendings__total--right {
+    margin-right: 20px;
+  }
+  .container__spendings__total h1 {
+    font-size: 40px;
+    margin-left: 0px;
+  }
+  .container .graph {
+    width: 40px;
+  }
+  .container hr {
+    width: 95%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body {
+    height: 75vh;
+  }
+  .container {
+    top: 25%;
+    width: 30%;
+  }
+  .container__spendings {
+    margin-top: 45px;
+    height: 500px;
+  }
+  .container__spendings h1 {
+    margin-left: 25px;
+  }
+  .container__spendings__graphs {
+    grid-template-columns: repeat(7, 50px);
+    justify-content: center;
+  }
+  .container__spendings__total {
+    margin-top: 30px;
+  }
+  .container__spendings__total--left {
+    margin-left: 20px;
+  }
+  .container__spendings__total--right {
+    margin-right: 20px;
+  }
+  .container__spendings__total h1 {
+    font-size: 40px;
+    margin-left: 0px;
+  }
+  .graph {
+    width: 45px;
+    cursor: pointer;
+    align-self: end;
+    height: 1000px;
+  }
+  .money {
+    margin-top: -45px;
+    margin-left: -10px;
+    position: relative;
+    background: hsl(25deg, 47%, 15%);
+    color: hsl(33deg, 100%, 98%);
+    padding: 2px 10px;
+    width: 42px;
+    height: 35px;
+    border-radius: 5px;
+    display: none;
+  }
+  .money p {
+    font-size: 18px;
+    color: hsl(33deg, 100%, 98%);
+    margin-left: -6px;
+  }
+  hr {
+    margin-top: 40px;
+    width: 90%;
+  }
+}
+.active {
+  background: hsl(186deg, 34%, 60%);
+}
+
+.clicked {
+  display: block;
+}
+
+@keyframes graph {
+  0% {
+    max-height: 0%;
+  }
+  10% {
+    max-height: 10%;
+  }
+  20% {
+    max-height: 20%;
+  }
+  30% {
+    max-height: 30%;
+  }
+  40% {
+    max-height: 40%;
+  }
+  50% {
+    max-height: 50%;
+  }
+  60% {
+    max-height: 60%;
+  }
+  70% {
+    max-height: 70%;
+  }
+  80% {
+    max-height: 80%;
+  }
+  90% {
+    max-height: 90%;
+  }
+  100% {
+    max-height: 100%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
