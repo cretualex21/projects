@@ -1,0 +1,269 @@
+@use "../variables/config";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: config.$ff;
+}
+body {
+  background: config.$clr-background-main-theme1;
+}
+.calc-container {
+  width: 90%;
+  margin: 80px auto;
+}
+.calc__nav {
+  display: flex;
+  & > h1 {
+    font-size: 38px;
+    transform: translateY(-10px);
+  }
+  & .theme-container {
+    margin-left: auto;
+    display: flex;
+    & > p {
+      transform: translateX(20px) translateY(10px);
+    }
+  }
+  .theme-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 20px;
+    transform: translateY(-20px);
+    & .themes {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+    & .button-holder {
+      width: 100px;
+      height: 30px;
+      border-radius: 20px;
+      & .btn {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      & .btn-theme1 {
+        @include config.btn-position(6px);
+        background: config.$clr-key-background-500-theme1;
+      }
+      & .btn-theme2 {
+        @include config.btn-position(38px);
+        background: config.$clr-key-background-500-theme2;
+      }
+      & .btn-theme3 {
+        @include config.btn-position(73px);
+        background: config.$clr-key-background-500-theme3;
+      }
+    }
+  }
+}
+.calc-nav-theme1 {
+  color: config.$clr-neutral;
+}
+.calc-nav-theme2 {
+  color: config.$clr-text-700-theme2;
+}
+.calc-nav-theme3 {
+  color: config.$clr-text-500-theme3;
+}
+.button-holder-theme1 {
+  background: config.$clr-background-toggle-keypad-theme1;
+}
+.button-holder-theme2 {
+  background: config.$clr-background-toggle-keypad-theme2;
+}
+.button-holder-theme3 {
+  background: config.$clr-background-toggle-keypad-theme3;
+}
+.calc-body-text--background {
+  width: 100%;
+  padding: 30px 0;
+  margin-top: 50px;
+
+  border-radius: 10px;
+  & p {
+    text-align: end;
+    margin-right: 20px;
+    font-size: 32px;
+  }
+}
+.calc-body__main {
+  height: 500px;
+  border-radius: 15px;
+  margin-top: 30px;
+  position: relative;
+  & .btns-holder {
+    position: absolute;
+    width: 300px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 65px);
+    gap: 1rem;
+    margin-top: 25px;
+    & p {
+      text-align: center;
+      padding: 25px;
+      border-radius: 5px;
+      font-size: config.$fs-number;
+      color: config.$clr-text-700-theme1;
+      cursor: pointer;
+      transition: scale 0.5s ease;
+    }
+    & .calc-theme2 {
+      color: config.$clr-text-700-theme2;
+    }
+    & .calc-theme3 {
+      color: config.$clr-text-500-theme3;
+    }
+    & p:hover {
+      scale: 1.05;
+    }
+    & p:active {
+      scale: 0.85;
+    }
+    & .special-2 {
+      text-align: center;
+      border-radius: 5px;
+      color: config.$clr-neutral;
+      font-size: config.$fs-number;
+    }
+    & .del {
+      margin: auto;
+      padding: 25px 7px;
+      transition: scale 0.5s ease;
+    }
+    & .del:hover {
+      scale: 1.05;
+    }
+    & .del:active {
+      scale: 0.85;
+    }
+
+    & .wide {
+      width: 150px;
+      height: 60px;
+      font-size: 25px;
+      grid-column: 1;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: scale 0.5s ease;
+      & p {
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        font-size: 25px;
+        margin-top: 20px;
+      }
+      & .specials-theme1,
+      .specials-theme2,
+      .specials-theme3 {
+        color: config.$clr-neutral;
+      }
+    }
+    & .wide:hover {
+      scale: 1.05;
+    }
+    & .wide:active {
+      scale: 0.85;
+    }
+    & .equals {
+      grid-column: 3;
+      margin-left: -2px;
+      & .specials-theme3 {
+        color: config.$clr-text-700-theme3;
+      }
+    }
+  }
+}
+//color for the text of the calc
+.text-theme1 {
+  background-color: config.$clr-background-screen-theme1;
+  color: config.$clr-neutral;
+}
+.text-theme2 {
+  background-color: config.$clr-background-screen-theme2;
+  color: config.$clr-text-700-theme2;
+}
+.text-theme3 {
+  background: config.$clr-background-toggle-keypad-theme3;
+  color: config.$clr-text-500-theme3;
+}
+//calc body color
+.body-theme1 {
+  background: config.$clr-background-toggle-keypad-theme1;
+}
+.body-theme2 {
+  background: config.$clr-background-toggle-keypad-theme2;
+}
+.body-theme3 {
+  background: config.$clr-background-toggle-keypad-theme3;
+}
+//buttons inside calc
+.calc-theme1 {
+  background: config.$clr-key-background-200-theme1;
+  @include config.btn-shadows(config.$clr-key-shadow-200-theme1);
+}
+.calc-theme2 {
+  background: config.$clr-key-background-200-theme2;
+  @include config.btn-shadows(config.$clr-key-shadow-200-theme2);
+}
+.calc-theme3 {
+  background: config.$clr-key-background-200-theme3;
+  @include config.btn-shadows(config.$clr-key-shadow-200-theme3);
+}
+.del-theme1 {
+  background: config.$clr-key-background-700-theme1;
+  @include config.btn-shadows(config.$clr-key-shadow-700-theme1);
+}
+.del-theme2 {
+  background: config.$clr-key-background-700-theme2;
+  @include config.btn-shadows(config.$clr-key-shadow-700-theme2);
+}
+.del-theme3 {
+  background: config.$clr-background-screen-theme3;
+  @include config.btn-shadows(config.$clr-key-background-700-theme3);
+}
+.reset-theme1 {
+  background: config.$clr-key-background-700-theme1;
+  @include config.btn-shadows(config.$clr-key-shadow-700-theme1);
+}
+.reset-theme2 {
+  background: config.$clr-key-background-700-theme2;
+  @include config.btn-shadows(config.$clr-key-shadow-700-theme2);
+}
+.reset-theme3 {
+  background: config.$clr-background-screen-theme3;
+  @include config.btn-shadows(config.$clr-key-background-700-theme3);
+}
+.equals-theme1 {
+  background: config.$clr-key-background-500-theme1;
+  @include config.btn-shadows(config.$clr-key-shadow-500-theme1);
+}
+.equals-theme2 {
+  background: config.$clr-key-background-500-theme2;
+  @include config.btn-shadows(config.$clr-key-shadow-500-theme2);
+}
+.equals-theme3 {
+  background: config.$clr-key-shadow-700-theme3;
+  @include config.btn-shadows(config.$clr-key-background-500-theme3);
+}
+//background for the body of the page
+.main-body-theme2 {
+  background: config.$clr-background-main-theme2;
+}
+.main-body-theme3 {
+  background: config.$clr-background-main-theme3;
+}
+@media screen and (min-width: 1200px) {
+  .calc-container {
+    max-width: 450px;
+  }
+}
