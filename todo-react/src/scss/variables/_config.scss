@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Outfit:wght@400;700&family=Space+Grotesk:wght@500&display=swap");
+$clr-primary-600: hsl(220, 98%, 61%);
+$clr-linear-gradient: hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+//light theme colors
+$clr-light-theme-100: hsl(0, 0%, 98%);
+$clr-light-theme-200: hsl(236, 33%, 92%);
+$clr-light-theme-300: hsl(233, 11%, 84%);
+$clr-light-theme-400: hsl(236, 9%, 61%);
+$clr-light-theme-500: hsl(235, 19%, 35%);
+//dark theme colors
+$clr-dark-theme-700: hsl(235, 21%, 11%);
+$clr-dark-theme-600: hsl(235, 24%, 19%);
+$clr-dark-theme-100: hsl(234, 39%, 85%);
+$clr-dark-theme-100-hover: hsl(236, 33%, 92%);
+$clr-dark-theme-300: hsl(234, 11%, 52%);
+$clr-dark-theme-400: hsl(233, 14%, 35%);
+$clr-dark-theme-500: hsl(237, 14%, 26%);
+$fs: 18px;
+$fm: "Josefin Sans", sans-serif;
+$fw-400: 400;
+$fw-700: 700;

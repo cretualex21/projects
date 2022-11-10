@@ -1,0 +1,234 @@
+@use "../variables/config";
+body {
+  font-family: config.$fm;
+  background: config.$clr-light-theme-100;
+}
+
+.top-elements {
+  background-image: url(../public/images/bg-mobile-light.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 250px;
+  top: 0%;
+  & h1 {
+    position: absolute;
+    margin: 50px 35px;
+    color: config.$clr-light-theme-100;
+    letter-spacing: 15px;
+  }
+  & .light-dark {
+    float: right;
+    margin: 50px 35px;
+
+    cursor: pointer;
+  }
+}
+.form {
+  position: absolute;
+  top: 7rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 90%;
+
+  & .todo-container {
+    width: 100%;
+    height: 50px;
+    background: config.$clr-light-theme-100;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+    & .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      outline: 1px solid config.$clr-light-theme-400;
+      //background: linear-gradient(to bottom right, $clr-linear-gradient);
+      border-radius: 50%;
+      left: 20px;
+      top: 10px;
+    }
+    & input {
+      margin-left: 60px;
+      margin-top: 6px;
+      padding: 10px;
+      border: none;
+      background: config.$clr-light-theme-100;
+      color: config.$clr-light-theme-400;
+      caret-color: config.$clr-primary-600;
+      &::placeholder {
+        color: config.$clr-light-theme-400;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.todo-list {
+  position: absolute;
+  top: 11.5rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 90%;
+  background: config.$clr-light-theme-100;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+  & .todos {
+    display: flex;
+    margin-top: 10px;
+    & .circle {
+      width: 25px;
+      height: 25px;
+      outline: 1px solid config.$clr-light-theme-400;
+      border-radius: 50%;
+      left: 20px;
+      top: 10px;
+      cursor: pointer;
+      margin-left: 15px;
+      align-self: center;
+      & img {
+        margin-left: 5px;
+        margin-top: 5px;
+        display: none;
+      }
+    }
+    & img {
+      margin-left: auto;
+      margin-right: 15px;
+      width: 15px;
+      height: 15px;
+      align-self: center;
+    }
+    & p {
+      margin-left: 15px;
+      align-self: center;
+    }
+  }
+  & .items {
+    display: flex;
+    margin-bottom: 10px;
+    color: config.$clr-light-theme-400;
+    &--left {
+      margin-right: auto;
+      margin-left: 15px;
+      cursor: default;
+    }
+    &--clear {
+      margin-right: 15px;
+      cursor: pointer;
+    }
+  }
+}
+.complete {
+  background: linear-gradient(to bottom right, $clr-linear-gradient);
+  display: block !important;
+}
+hr {
+  opacity: 30%;
+}
+.todos-scroll {
+  max-height: 350px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.todo-filter {
+  position: absolute;
+  top: 95%;
+  margin-top: 50px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
+  height: 50px;
+  background: config.$clr-light-theme-100;
+  border-radius: 5px;
+  &__text {
+    font-weight: config.$fw-700;
+    color: config.$clr-light-theme-400;
+    cursor: pointer;
+  }
+}
+.drag-text {
+  position: absolute;
+  top: 100%;
+  margin-top: 120px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 100%;
+  text-align: center;
+  color: $clr-light-theme-400;
+}
+.active {
+  color: config.$clr-primary-600 !important;
+}
+
+//dark theme
+.dark {
+  background-color: $clr-dark-theme-600 !important;
+}
+.top-elements--dark {
+  background-image: url(../public/images/bg-mobile-dark.jpg) !important;
+}
+.todo-container--dark {
+  background-color: $clr-dark-theme-500 !important;
+  & input {
+    background-color: $clr-dark-theme-500 !important;
+    &:focus {
+      color: $clr-dark-theme-100;
+    }
+  }
+}
+.todo-list--dark {
+  background-color: $clr-dark-theme-500 !important;
+  color: $clr-dark-theme-100;
+  & img {
+    filter: invert(100%);
+  }
+}
+.todo-filter--dark {
+  background-color: $clr-dark-theme-500 !important;
+}
+
+@media (min-width: 1281px) {
+  .top-elements {
+    height: 350px;
+    background-image: url(../public/images/bg-desktop-light.jpg);
+    & h1 {
+      left: 23%;
+    }
+    & .light-dark {
+      margin-right: 22.3em;
+    }
+  }
+
+  .form {
+    width: 50%;
+  }
+  .todo-list {
+    width: 50%;
+  }
+  .delete {
+    display: none;
+    cursor: pointer;
+  }
+  .todos-container {
+    &:hover {
+      & .delete {
+        display: block;
+      }
+    }
+  }
+  //dark mode desktop
+  .top-elements--dark {
+    background-image: url(../public/images/bg-desktop-dark.jpg) !important;
+  }
+}
