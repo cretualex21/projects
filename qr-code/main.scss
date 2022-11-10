@@ -1,0 +1,58 @@
+@import "config";
+
+body {
+  font-family: $fm;
+  background: $clr--neutral-300;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background: $clr--neutral-100;
+  width: 350px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  top: 10%;
+  bottom: 25%;
+  position: absolute;
+  border-radius: 25px;
+  &__qr {
+    & img {
+      width: 320px;
+      border-radius: 15px;
+      margin-top: 15px;
+    }
+  }
+  &__text {
+    & h2 {
+      text-align: center;
+      width: 300px;
+      margin-inline: auto;
+      color: $clr--primary-700;
+    }
+    & p {
+      padding: 2px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: $fw700;
+      width: 250px;
+      margin-inline: auto;
+      color: $clr--primary-400;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    top: 25%;
+    bottom: 25%;
+  }
+}
