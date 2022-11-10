@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Outfit:wght@400;700&family=Space+Grotesk:wght@500&display=swap");
+$clr-primary: hsl(26, 100%, 55%);
+$clr-primary-opacity: 26, 100%, 55%;
+$clr-primary-light: hsl(25, 100%, 94%);
+$clr-neutral-darkest: hsl(220, 13%, 13%);
+$clr-neutral-darker: hsl(219, 9%, 45%);
+$clr-neutral-dark: hsl(220, 14%, 75%);
+$clr-neutral-light: hsl(223, 64%, 98%);
+$clr-neutral: hsl(0, 0%, 100%);
+$clr-neutral-black: hsl(0, 0%, 0%);
+$fm: "Kumbh Sans", sans-serif;
+$fs-p: 16px;
+$fw-400: 400;
+$fw-700: 700;
+
+@mixin position($position) {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  background-color: $clr-neutral;
+  top: 17%;
+  #{$position}: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+@mixin quantity($position) {
+  width: 5%;
+  height: 5%;
+  align-self: center;
+  cursor: pointer;
+  margin-#{$position}: -40px;
+}

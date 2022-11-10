@@ -1,0 +1,231 @@
+@use "../utils/variables";
+
+.nav {
+  background-color: variables.$clr-neutral;
+  &__container {
+    & .amount-container {
+      position: absolute;
+      top: 0.85rem;
+      right: 4rem;
+      width: 1.25rem;
+      height: 0.9rem;
+      border-radius: 20px;
+      background: variables.$clr-primary;
+      color: variables.$clr-neutral;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: variables.$fm;
+      font-size: 12px;
+      font-weight: 700;
+      display: none;
+    }
+    margin: 20px 25px;
+    & .aside-black {
+      background-color: variables.$clr-neutral-black;
+      position: absolute;
+      top: 0%;
+      left: 65%;
+      bottom: 0%;
+      right: 0;
+      opacity: 75%;
+      display: none;
+      z-index: 1;
+    }
+    &__elements {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      bottom: 0%;
+      right: 35%;
+      background-color: variables.$clr-neutral;
+      display: none;
+      z-index: 1;
+      & .close-menu {
+        margin: 20px 15px;
+      }
+      & p {
+        font-family: variables.$fm;
+        font-size: variables.$fs-p;
+        font-weight: variables.$fw-700;
+        margin-left: 20px;
+      }
+    }
+  }
+  &__container__utils {
+    display: flex;
+    gap: 1rem;
+    & img:nth-child(1) {
+      height: 20px;
+      margin-top: 5px;
+    }
+    & img:nth-child(3) {
+      margin-left: auto;
+      margin-right: 8px;
+      filter: brightness(0%);
+      cursor: pointer;
+    }
+
+    & .user {
+      height: 25px;
+    }
+  }
+  & .checkout {
+    position: absolute;
+    z-index: 1;
+    background: variables.$clr-neutral;
+    margin: 10px 12px;
+    width: 95%;
+    font-family: variables.$fm;
+    border-radius: 15px;
+    box-shadow: 0px 3px 14px 2px rgba(0, 0, 0, 0.43);
+    display: none;
+
+    & > p {
+      font-weight: variables.$fw-700;
+      text-indent: 25px;
+    }
+    & > hr {
+      display: block;
+      opacity: 0.3;
+    }
+    &__components {
+      display: flex;
+      gap: 1rem;
+      margin-top: 20px;
+      &--image {
+        align-self: center;
+        margin-left: 20px;
+      }
+      &--image img {
+        height: 55px;
+        width: 55px;
+        border-radius: 5px;
+      }
+      &--desc {
+        width: 100%;
+        align-self: center;
+      }
+      &--desc p {
+        color: variables.$clr-neutral-darker;
+        text-transform: capitalize;
+        line-height: 0.8;
+      }
+      &--desc span {
+        font-weight: variables.$fw-700;
+        color: variables.$clr-neutral-black;
+      }
+      &--delete {
+        align-self: center;
+        margin-right: 20px;
+      }
+      &--delete button {
+        border: none;
+        background-color: variables.$clr-neutral;
+      }
+    }
+    .checkout-btn {
+      margin-inline: auto;
+      text-align: center;
+      width: 80%;
+      margin-top: 15px;
+      margin-bottom: 30px;
+      & button {
+        width: 100%;
+        color: variables.$clr-neutral;
+        background: variables.$clr-primary;
+        border: none;
+        border-radius: 10px;
+        padding: 20px;
+        font-weight: variables.$fw-700;
+        font-size: variables.$fs-p;
+      }
+    }
+  }
+}
+hr {
+  display: none;
+}
+.sidebar {
+  display: block !important;
+}
+
+@media only screen and (min-width: 1440px) {
+  .nav {
+    width: 80%;
+    margin-inline: auto;
+    &__container .amount-container {
+      right: 16.5rem;
+      top: 1.2rem;
+    }
+    &__container__utils {
+      & img:nth-child(1) {
+        display: none;
+      }
+      & img:nth-child(2) {
+        height: 20px;
+        align-self: center;
+      }
+      & img:nth-child(3) {
+        margin-right: 25px;
+        height: 20px;
+        align-self: center;
+      }
+      & .user {
+        height: 40px;
+      }
+    }
+
+    & .close-menu {
+      display: none;
+    }
+    & .desktop {
+      display: flex !important;
+      background-color: transparent;
+      position: absolute;
+      display: flex;
+      bottom: 90%;
+      margin-left: 450px;
+      margin-top: 15px;
+      color: variables.$clr-neutral-darker;
+      & p {
+        font-weight: variables.$fw-400;
+      }
+    }
+    .checkout {
+      width: 24%;
+      top: 80px;
+      right: 180px;
+      height: 280px;
+      & .empty {
+        text-align: center;
+        margin-top: 20%;
+        margin-left: -15px;
+        color: variables.$clr-neutral-darker;
+      }
+      & > p {
+        margin-top: 20px;
+        margin-bottom: -20px;
+      }
+      &__components {
+        &--image {
+          margin-left: 40px;
+        }
+        &--delete {
+          margin-right: 40px;
+        }
+      }
+    }
+  }
+  hr {
+    display: block;
+    opacity: 0.5;
+    margin-top: 50px;
+  }
+}
+.cart {
+  display: block !important;
+}
+.amount-active {
+  display: flex !important;
+}
