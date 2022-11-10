@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=DM+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Nunito+Sans:wght@300;600;800&family=Outfit:wght@400;700&family=Space+Grotesk:wght@500&display=swap");
+
+$clr-primary-gradiant-scisorss: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+$clr-primary-gradiant-paper: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
+$clr-primary-gradiant-rock: hsl(349, 71%, 52%), hsl(349, 70%, 56%);
+$clr-primary-gradiant-lizard: hsl(261, 73%, 60%), hsl(261, 72%, 63%);
+$clr-primary-700: hsl(189, 59%, 53%), hsl(189, 58%, 57%);
+$clr-neutral-700: hsl(229, 25%, 31%);
+$clr-neutral-500: hsl(229, 64%, 46%);
+$clr-neutral-300: hsl(217, 16%, 45%);
+$clr-background: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+$fm: "Barlow Semi Condensed", sans-serif;
+$fw-600: 600;
+$fw-700: 700;
+
+@mixin absolute-center($width) {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: $width;
+}
+@mixin border-option-selectors($color) {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  padding: 10px;
+  background: linear-gradient($color);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+@mixin postion-option-selectors($margin-top, $transform, $width) {
+  margin-top: $margin-top;
+  transform: translateX($transform);
+  width: $width;
+  & .game-option-wrapper:nth-child(2) {
+    margin-left: auto;
+  }
+}
