@@ -1,0 +1,35 @@
+//Font family import
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=DM+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@700&family=Nunito+Sans:wght@300;600;800&family=Outfit:wght@400;700&family=Space+Grotesk:wght@500&family=Ubuntu:wght@400;500;700&display=swap");
+//Primary colors
+$clr-primary-700: hsl(213, 96%, 18%);
+$clr-primary-600: hsl(243, 100%, 62%);
+$clr-primary-500: hsl(228, 100%, 84%);
+$clr-primary-400: hsl(206, 94%, 87%);
+$clr-primary-red: hsl(354, 84%, 57%);
+//Neutral colors
+$clr-neutral-400: hsl(231, 11%, 63%);
+$clr-neutral-300: hsl(229, 24%, 87%);
+$clr-neutral-200: hsl(217, 100%, 97%);
+$clr-neutral-100: hsl(231, 100%, 99%);
+$clr-neutral: hsl(0, 0%, 100%);
+//Typography
+$fs: 16px;
+$fm: "Ubuntu", sans-serif;
+$fw-400: 400;
+$fw-500: 500;
+$fw-700: 700;
+
+//mixins
+@mixin btns($right-left, $ammount, $bg-color, $txt-color) {
+  position: absolute;
+  #{$right-left}: $ammount;
+  padding: 15px;
+  width: 120px;
+  border-radius: 5px;
+  border: none;
+  background-color: $bg-color;
+  color: $txt-color;
+  translate: 0 50%;
+  font-size: $fs;
+  font-weight: $fw-700;
+}

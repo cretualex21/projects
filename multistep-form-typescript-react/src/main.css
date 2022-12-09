@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=DM+Sans:wght@400;700&family=Josefin+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@700&family=Nunito+Sans:wght@300;600;800&family=Outfit:wght@400;700&family=Space+Grotesk:wght@500&family=Ubuntu:wght@400;500;700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  background-color: hsl(206deg, 94%, 87%);
+}
+
+.step-tracker {
+  background-image: url("../public/images/bg-sidebar-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.step-tracker .steps .step {
+  width: 25px;
+  height: 25px;
+  outline: 2px solid hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+  text-align: center;
+  padding: 8px;
+  margin-top: 34px;
+}
+.step-tracker .steps .step p {
+  translate: 0 -70%;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+}
+.step-tracker .steps .active {
+  background-color: hsl(206deg, 94%, 87%);
+}
+.step-tracker .steps .active p {
+  color: black;
+}
+.step-tracker .steps--text {
+  display: none;
+}
+
+.form-container {
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 10px;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  width: 380px;
+  translate: -50% 0;
+}
+.form-container form {
+  padding: 15px;
+}
+.form-container .form-step h1 {
+  color: hsl(213deg, 96%, 18%);
+}
+.form-container .form-step p {
+  color: hsl(231deg, 11%, 63%);
+  font-size: 18px;
+  font-weight: 400;
+}
+.form-container .form-step .form-input {
+  display: flex;
+  flex-direction: column;
+}
+.form-container .form-step .form-input label {
+  color: hsl(213deg, 96%, 18%);
+}
+.form-container .form-step .form-input input {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid hsl(231deg, 11%, 63%);
+}
+.form-container .form-step .form-input input::-moz-placeholder {
+  font-weight: 700;
+  font-size: 16px;
+  color: hsl(231deg, 11%, 63%);
+}
+.form-container .form-step .form-input input:-ms-input-placeholder {
+  font-weight: 700;
+  font-size: 16px;
+  color: hsl(231deg, 11%, 63%);
+}
+.form-container .form-step .form-input input::placeholder {
+  font-weight: 700;
+  font-size: 16px;
+  color: hsl(231deg, 11%, 63%);
+}
+.form-container .form-step .form-input input:focus {
+  outline: none;
+  border: 1px solid hsl(243deg, 100%, 62%);
+}
+.form-container .form-step .form-input input:invalid {
+  outline: none;
+  border: 1px solid hsl(354deg, 84%, 57%);
+}
+.form-container .form-step--last {
+  text-align: center;
+  height: 600px;
+  transform: translateY(20%);
+  -webkit-transform: translateY(20%);
+  -moz-transform: translateY(20%);
+}
+.form-container .form-step--last h1 {
+  color: hsl(213deg, 96%, 18%);
+}
+.form-container .form-step--last p {
+  color: hsl(231deg, 11%, 63%);
+  font-size: 20px;
+}
+.form-container .checkbox-container {
+  width: 100%;
+  border: 1px solid hsl(231deg, 11%, 63%);
+  border-radius: 5px;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.form-container .checkbox-container .free {
+  color: hsl(213deg, 96%, 18%);
+  font-size: 16px;
+  width: 102px;
+}
+.form-container .checkbox-container img {
+  height: 50px;
+  align-self: center;
+  margin-left: 20px;
+}
+.form-container .checkbox-container .subscription h3 {
+  margin-bottom: -10px;
+  color: hsl(213deg, 96%, 18%);
+}
+.form-container .checkbox-container input {
+  display: none;
+}
+.form-container .checkbox-container .add-ons {
+  margin-left: 50px;
+}
+.form-container .checkbox-container .add-ons p {
+  font-size: 16px;
+  margin-top: -10px;
+}
+.form-container .checkbox-container .add-ons-price {
+  align-self: center;
+  margin-right: 10px;
+}
+.form-container .checkbox-container .add-ons-price p {
+  color: hsl(243deg, 100%, 62%);
+  font-size: 16px;
+}
+.form-container .checkbox-container .visible {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+.form-container .checkbox-container .checkbox {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: 1px solid hsl(231deg, 11%, 63%);
+  border-radius: 5px;
+}
+.form-container .checkbox-container .checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.form-container .checkbox-container:has(input:checked) {
+  border: 1px solid hsl(243deg, 100%, 62%);
+}
+.form-container .checkbox-container input:checked ~ .checkbox {
+  background-color: hsl(243deg, 100%, 62%);
+}
+.form-container .checkbox-container input:checked ~ .checkbox:after {
+  display: block;
+}
+.form-container .checkbox-container .checkbox:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.form-container .subscription-plan {
+  display: flex;
+  background-color: hsl(217deg, 100%, 97%);
+  justify-content: center;
+  gap: 1rem;
+}
+.form-container .subscription-plan p {
+  font-weight: 500;
+}
+.form-container .subscription-plan p:nth-child(1) {
+  color: hsl(213deg, 96%, 18%);
+}
+.form-container .subscription-plan-btn {
+  background-color: hsl(213deg, 96%, 18%);
+  width: 50px;
+  height: 20px;
+  border-radius: 10px;
+  align-self: center;
+}
+.form-container .subscription-plan-btn button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  background: hsl(0deg, 0%, 100%);
+  translate: 4px;
+  transform: translateY(1px);
+  -webkit-transform: translateY(1px);
+  -moz-transform: translateY(-5px);
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+  margin-inline: auto;
+}
+.total p:nth-child(2) {
+  color: hsl(243deg, 100%, 62%);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.form-finish {
+  background-color: hsl(217deg, 100%, 97%);
+  border-radius: 15px;
+  padding: 10px;
+  width: 300px;
+  margin-inline: auto;
+}
+.form-finish .subscription-finish {
+  display: flex;
+  justify-content: space-between;
+}
+.form-finish .subscription-finish--plan h3 {
+  color: hsl(213deg, 96%, 18%);
+}
+.form-finish .subscription-finish--plan p {
+  margin-top: -20px;
+  text-decoration: underline;
+  font-weight: 700;
+}
+.form-finish .subscription-finish--plan span {
+  text-transform: capitalize;
+}
+.form-finish .subscription-finish--price {
+  align-self: center;
+}
+.form-finish .subscription-finish--price p {
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 700;
+  margin-right: 10px;
+}
+.form-finish hr {
+  opacity: 0.3;
+}
+.form-finish .service {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -10px;
+}
+.form-finish .service .price {
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.btn-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: hsl(0deg, 0%, 100%);
+}
+.btn-container .back-btn {
+  position: absolute;
+  left: 0px;
+  padding: 15px;
+  width: 120px;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  color: hsl(231deg, 11%, 63%);
+  translate: 0 50%;
+  font-size: 16px;
+  font-weight: 700;
+}
+.btn-container .next-btn {
+  position: absolute;
+  right: 20px;
+  padding: 15px;
+  width: 120px;
+  border-radius: 5px;
+  border: none;
+  background-color: hsl(213deg, 96%, 18%);
+  color: hsl(0deg, 0%, 100%);
+  translate: 0 50%;
+  font-size: 16px;
+  font-weight: 700;
+}
+.btn-container .last {
+  background-color: hsl(243deg, 100%, 62%);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    background-color: hsl(0deg, 0%, 100%);
+    width: 1100px;
+    height: 820px;
+    margin-inline: auto;
+    transform: translateY(20%);
+  }
+  .step-tracker {
+    top: 10px;
+    left: 10px;
+    right: auto;
+    position: absolute;
+    background-image: url("../public/images/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    width: 350px;
+    flex-direction: column;
+    height: 800px;
+  }
+  .step-tracker .steps {
+    transform: translate(50px, -200px);
+  }
+  .step-tracker .steps--text {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: translate(60px, -60px);
+  }
+  .step-tracker .steps--text p {
+    margin-bottom: -10px;
+    text-transform: uppercase;
+    color: hsl(231deg, 11%, 63%);
+  }
+  .step-tracker .steps--text p:nth-child(2) {
+    color: hsl(0deg, 0%, 100%);
+  }
+  .form-container {
+    position: relative;
+    transform: translate(180px, -80px);
+    height: 500px;
+    width: 600px;
+  }
+  .form-container .form-step .form-input input {
+    margin-bottom: 60px;
+  }
+  .form-container .form-step .desktop {
+    display: flex;
+    height: 250px;
+    gap: 1rem;
+  }
+  .form-container .form-step .desktop .checkbox-container img {
+    align-self: baseline;
+    margin-top: 20px;
+  }
+  .form-container .form-step .desktop .checkbox-container .subscription {
+    align-self: flex-end;
+    transform: translate(-70px);
+  }
+  .form-finish {
+    width: 550px;
+  }
+  .total {
+    width: 550px;
+  }
+  .btn-container {
+    width: 550px;
+    transform: translate(450px);
+  }
+}/*# sourceMappingURL=main.css.map */

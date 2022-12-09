@@ -1,0 +1,389 @@
+@use "../config/config";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: config.$fm;
+  background-color: config.$clr-primary-400;
+}
+.step-tracker {
+  background-image: url("../public/images/bg-sidebar-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  & .steps {
+    & .step {
+      width: 25px;
+      height: 25px;
+      outline: 2px solid config.$clr-neutral;
+      border-radius: 50%;
+      text-align: center;
+      padding: 8px;
+      margin-top: 34px;
+      & p {
+        translate: 0 -70%;
+        color: config.$clr-neutral;
+        font-weight: config.$fw-700;
+      }
+    }
+    & .active {
+      background-color: config.$clr-primary-400;
+      & p {
+        color: black;
+      }
+    }
+    &--text {
+      display: none;
+    }
+  }
+}
+.form-container {
+  background: config.$clr-neutral;
+  border-radius: 10px;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  width: 380px;
+  translate: -50% 0;
+  & form {
+    padding: 15px;
+  }
+  & .form-step {
+    & h1 {
+      color: config.$clr-primary-700;
+    }
+    & p {
+      color: config.$clr-neutral-400;
+      font-size: 18px;
+      font-weight: config.$fw-400;
+    }
+    & .form-input {
+      display: flex;
+      flex-direction: column;
+      & label {
+        color: config.$clr-primary-700;
+      }
+      & input {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid config.$clr-neutral-400;
+        &::placeholder {
+          font-weight: config.$fw-700;
+          font-size: config.$fs;
+          color: config.$clr-neutral-400;
+        }
+        &:focus {
+          outline: none;
+          border: 1px solid config.$clr-primary-600;
+        }
+        &:invalid {
+          outline: none;
+          border: 1px solid config.$clr-primary-red;
+        }
+      }
+    }
+    &--last {
+      text-align: center;
+      height: 600px;
+      transform: translateY(20%);
+      -webkit-transform: translateY(20%);
+      -moz-transform: translateY(20%);
+      & h1 {
+        color: config.$clr-primary-700;
+      }
+      & p {
+        color: config.$clr-neutral-400;
+        font-size: 20px;
+      }
+    }
+  }
+  & .checkbox-container {
+    width: 100%;
+    border: 1px solid config.$clr-neutral-400;
+    border-radius: 5px;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    & .free {
+      color: config.$clr-primary-700;
+      font-size: 16px;
+      width: 102px;
+    }
+    & img {
+      height: 50px;
+      align-self: center;
+      margin-left: 20px;
+    }
+    & .subscription h3 {
+      margin-bottom: -10px;
+      color: config.$clr-primary-700;
+    }
+    & input {
+      display: none;
+    }
+    & .add-ons {
+      margin-left: 50px;
+      & p {
+        font-size: config.$fs;
+        margin-top: -10px;
+      }
+    }
+    & .add-ons-price {
+      align-self: center;
+      margin-right: 10px;
+      & p {
+        color: config.$clr-primary-600;
+        font-size: 16px;
+      }
+    }
+
+    & .visible {
+      display: block;
+      opacity: 0;
+      position: absolute;
+      height: 0;
+      width: 0;
+    }
+    & .checkbox {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      margin-left: 10px;
+      background-color: transparent;
+      border: 1px solid config.$clr-neutral-400;
+      border-radius: 5px;
+    }
+    & .checkbox:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+  & .checkbox-container:has(input:checked) {
+    border: 1px solid config.$clr-primary-600;
+  }
+  .checkbox-container input:checked ~ .checkbox {
+    background-color: config.$clr-primary-600;
+  }
+  .checkbox-container input:checked ~ .checkbox:after {
+    display: block;
+  }
+  .checkbox-container .checkbox:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  & .subscription-plan {
+    display: flex;
+    background-color: config.$clr-neutral-200;
+    justify-content: center;
+    gap: 1rem;
+
+    & p {
+      font-weight: config.$fw-500;
+    }
+    & p:nth-child(1) {
+      color: config.$clr-primary-700;
+    }
+    &-btn {
+      background-color: config.$clr-primary-700;
+      width: 50px;
+      height: 20px;
+      border-radius: 10px;
+      align-self: center;
+
+      & button {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: none;
+        background: config.$clr-neutral;
+        translate: 4px;
+        transform: translateY(1px);
+        -webkit-transform: translateY(1px);
+        -moz-transform: translateY(-5px);
+        cursor: pointer;
+        transition: all 1s;
+      }
+    }
+  }
+}
+.space-between {
+  justify-content: space-between;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+  margin-inline: auto;
+  & p:nth-child(2) {
+    color: config.$clr-primary-600;
+    font-weight: config.$fw-700;
+    font-size: 20px;
+  }
+}
+.form-finish {
+  background-color: config.$clr-neutral-200;
+  border-radius: 15px;
+  padding: 10px;
+  width: 300px;
+  margin-inline: auto;
+  & .subscription-finish {
+    display: flex;
+    justify-content: space-between;
+    &--plan h3 {
+      color: config.$clr-primary-700;
+    }
+    &--plan p {
+      margin-top: -20px;
+      text-decoration: underline;
+      font-weight: config.$fw-700;
+    }
+    &--plan span {
+      text-transform: capitalize;
+    }
+    &--price {
+      align-self: center;
+      & p {
+        color: config.$clr-primary-700;
+        font-weight: config.$fw-700;
+        margin-right: 10px;
+      }
+    }
+  }
+  & hr {
+    opacity: 0.3;
+  }
+  & .service {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+    & .price {
+      color: config.$clr-primary-700;
+      font-weight: config.$fw-500;
+      margin-right: 10px;
+    }
+  }
+}
+
+.btn-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: config.$clr-neutral;
+  & .back-btn {
+    @include config.btns(left, 0px, transparent, config.$clr-neutral-400);
+  }
+  & .next-btn {
+    @include config.btns(
+      right,
+      20px,
+      config.$clr-primary-700,
+      config.$clr-neutral
+    );
+  }
+  & .last {
+    background-color: config.$clr-primary-600;
+  }
+}
+.hidden {
+  display: none !important;
+}
+
+@media screen and (min-width: 1200px) {
+  .App {
+    background-color: config.$clr-neutral;
+    width: 1100px;
+    height: 820px;
+    margin-inline: auto;
+    transform: translateY(20%);
+  }
+  .step-tracker {
+    top: 10px;
+    left: 10px;
+    right: auto;
+    position: absolute;
+    background-image: url("../public/images/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    width: 350px;
+    flex-direction: column;
+    height: 800px;
+    & .steps {
+      transform: translate(50px, -200px);
+      &--text {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        transform: translate(60px, -60px);
+        & p {
+          margin-bottom: -10px;
+          text-transform: uppercase;
+          color: config.$clr-neutral-400;
+        }
+        & p:nth-child(2) {
+          color: config.$clr-neutral;
+        }
+      }
+    }
+  }
+  .form-container {
+    position: relative;
+    transform: translate(180px, -80px);
+    height: 500px;
+    width: 600px;
+    & .form-step {
+      & .form-input {
+        & input {
+          margin-bottom: 60px;
+        }
+      }
+      & .desktop {
+        display: flex;
+        height: 250px;
+        gap: 1rem;
+        & .checkbox-container {
+          & img {
+            align-self: baseline;
+            margin-top: 20px;
+          }
+          & .subscription {
+            align-self: flex-end;
+            transform: translate(-70px);
+          }
+        }
+      }
+    }
+  }
+  .form-finish {
+    width: 550px;
+  }
+  .total {
+    width: 550px;
+  }
+  .btn-container {
+    width: 550px;
+    transform: translate(450px);
+  }
+}
