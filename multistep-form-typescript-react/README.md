@@ -19,7 +19,7 @@ The app is responsive and mobile friendly.
 ## This is the second step
 
 ![Second step](./preview/secondStep.PNG)
-Here the user can choose what type of subscription and if it's a monthly or yearly one
+Here the user can choose what type of subscription and if it's a monthly or yearly one.
 This is the yearly subscription example
 ![Second step yearly](./preview/secondStep-yearly.PNG)
 
