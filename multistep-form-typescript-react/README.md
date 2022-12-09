@@ -20,7 +20,7 @@ The app is responsive and mobile friendly.
 
 ![Second step](./preview/secondStep.PNG)
 Here the user can choose what type of subscription and if it's a monthly or yearly one
-\*\*This is the yearly subscription example
+This is the yearly subscription example
 ![Second step yearly](./preview/secondStep-yearly.PNG)
 
 
@@ -51,4 +51,4 @@ Here the user can see the options selected and the cost of the subscription per 
 
 
 
-**Also there is a bug on FireFox if you interact with the monthly/yearly button it will go slightly under the designed container
+Also there is a bug on FireFox if you interact with the monthly/yearly button it will go slightly under the designed container
